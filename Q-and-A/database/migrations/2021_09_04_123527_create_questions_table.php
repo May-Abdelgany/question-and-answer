@@ -14,10 +14,10 @@ class CreateQuestionsTable extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('answer_id')->Constrained('answer');
+            $table->foreignId('answer_id')->Constrained('answers')->onDelete('cascade');
             $table->text('title');
-            $table->bigtext('question');
-            $table->string('tag');
+            $table->longText('question');
+            $table->text('tag');
             $table->timestamps();
         });
     }
