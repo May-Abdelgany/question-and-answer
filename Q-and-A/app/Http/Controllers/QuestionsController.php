@@ -16,7 +16,6 @@ class QuestionsController extends Controller
         $question->question=$request->question;
         $question->tag=$request->tag;
         $question->save();
-       // return new questionResources($question);
         return $question;
     }
 
