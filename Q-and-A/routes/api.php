@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Answerscontroller;
+use App\Http\Controllers\Questionscontroller;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,3 +18,12 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get('/answer', [AnswersController::class, 'index']);
+Route::post('/answer',[AnswersController::class,'store']);
+Route::get('/answer/{answer}', [AnswersController::class, 'delete']);
+
+Route::get('/question',[QuestionsController::class,'index']);
+Route::post('/question',[QuestionsController::class,'store']);
+Route::get('/question/{question}', [QuestionsController::class, 'delete']);
