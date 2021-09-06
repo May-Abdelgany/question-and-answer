@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\Models\Answer;
 use App\Models\Question;
 use App\Http\Resources\AnswerResource;
+use App\Http\Resources\Answers_QuestionResource;
+use App\Http\Requests\Answers_QuestionRequest;
 use Illuminate\Http\Request;
 class AnswersController extends Controller
 {
@@ -12,12 +14,10 @@ class AnswersController extends Controller
     }
 
 
-    public function display(/*Answers_Question*/Request $request ,$id)
+    public function display(Request $request ,$id)
         {
-            $question = Answer::with('Question')->where('question_id',$id)->get();
-            //return new Answer_QuestionResource($question);
-
-            return $question;
+           $question=Question::with('Answer')->where('id',$id)->get();
+         return Answers_QuestionResource::collection($question);
         }
 
     public function store(Request $request,Question $question)
