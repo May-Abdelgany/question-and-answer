@@ -14,11 +14,11 @@ class Answers_QuestionResource extends JsonResource
      * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
      */
     public function toArray($request)
-    { 
+    {
         return[
         'title'=>$this->title,
         'question'=>$this->question,
-        'answer'=>$this->answer,
+        'answer'=>AnswerResource::collection($this->answer),
         ];
     }
 }
