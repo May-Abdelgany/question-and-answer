@@ -27,3 +27,5 @@ Route::get('/answer/{answer}', [AnswersController::class, 'delete']);
 Route::get('/question',[QuestionsController::class,'index']);
 Route::post('/question',[QuestionsController::class,'store']);
 Route::get('/question/{question}', [QuestionsController::class, 'delete']);
+Route::get('/question/{id}/answers',[AnswersController::class,'display']);
+
