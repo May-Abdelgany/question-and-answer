@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "3da1845e-eb27-4634-9044-27beea891487",
+		"name": "A&Q",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "add question",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"title\": \"Odio corrupti non rem eius quia ipsum. Atque similique a impedit et. Qui aut nobis enim dolores.\",\r\n        \"question\": \"Quas voluptas est quia aliquam dolor accusamus nam quae repellat laboriosam voluptatibus numquam occaecati enim sequi sint sunt nesciunt molestiae ut ea perferendis sed perspiciatis labore at reprehenderit id magnam qui dicta voluptatem exercitationem aliquid natus ex minus est magni est neque nihil qui autem soluta placeat voluptates velit cum ut et voluptate ipsam aut eum possimus officiis enim nobis quia dolore officiis inventore aspernatur aperiam at nihil consequatur commodi et repellat inventore aut harum qui exercitationem non ut velit impedit aut omnis dolores quia quaerat expedita exercitationem minus est recusandae consequatur ut enim mollitia ex et id accusamus animi qui dolor doloribus minima amet quos dolorem et et iusto quia modi voluptatem vero minus quis asperiores architecto minima alias quia voluptatem quasi beatae ducimus id accusantium nisi ipsum et reprehenderit error et.\",\r\n        \"tag\": \"Minima aliquam consequatur eos ut libero. Tenetur ullam omnis provident delectus quas quasi voluptatibus. Nostrum laborum rerum aliquam qui quia qui qui sunt. Iste adipisci nostrum ut doloremque non.\"\r\n        \r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/question",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"question"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "question with answer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/question/10/answers",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"question",
+						"10",
+						"answers"
+					],
+					"query": [
+						{
+							"key": "content-type",
+							"value": "application/json",
+							"disabled": true
+						},
+						{
+							"key": "accept",
+							"value": "application/json",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all answer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/answer",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"answer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all question",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "add answer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"question_id\":3,\r\n        \"answer\": \"Odio corrupti non rem eius quia ipsum. Atque similique a impedit et. Qui aut nobis enim dolores.\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/answer",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"answer"
+					],
+					"query": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"disabled": true
+						},
+						{
+							"key": "Accept",
+							"value": "application/json",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
