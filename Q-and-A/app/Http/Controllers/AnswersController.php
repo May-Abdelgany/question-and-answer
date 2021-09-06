@@ -3,15 +3,16 @@ namespace App\Http\Controllers;
 
 use App\Models\Answer;
 use App\Models\Question;
-use App\Http\Controllers\AnswerResource;
-use Illuminate\Http\Request;
 
+use Illuminate\Http\Request;
 class AnswersController extends Controller
 {
-    public function index(Request $request,Question $question){
+    public function index(Request $request){
         return Answer::all();
     }
-    public function store(Request $request,Question $question)
+    
+
+    public function store(Answers_QuestionRequest $request,Question $question)
     {
 
        $answer=new Answer();
